@@ -116,7 +116,7 @@ const even = (arrConditions, digit) => {
 const gcd = (arrConditions, digit) => {
     let number1 = Math.floor(Math.random() * digit);
     let number2 = Math.floor(Math.random() * digit);
-    arrConditions.push(number1 + ", " + number2); 
+    arrConditions.push(number1 + " " + number2); 
     while(number2) {
     let help = number2;
     number2 = number1 % number2;
