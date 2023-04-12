@@ -17,33 +17,11 @@ export const level = () => {
         return digit;
     } 
     const level = readlineSync.question('Please, enter the difficulty of the game from 1 to 3? ');
-    const arrLeveles = ['1','2','3'];
+    const arrLeveles = ['1', '2', '3'];
     if (arrLeveles.indexOf(level) < 0) {
-        console.log('Sorry, we don t know this level of difficulty. You\'ll play in easy level!')        
+        console.log('Sorry, we don t know this level of difficulty. You\'ll play in easy level!');        
     }
     return level;
-};
-
-export const game = (nameGame, name, digit = 1, rounds = 3) => {
-    let i = 0;
-    while (i < rounds) {
-        const arrConditions = findCorrectAnswerOfGame(nameGame, digit);
-        const question = arrConditions[0];
-        const correctAnswer = arrConditions[1];
-        console.log('Question: ' + question);
-        const answer = readlineSync.question('Your answer: ');
-        if (answer.trim().toLowerCase() == correctAnswer) {
-            i += 1;
-            console.log('Correct!');
-        } else {
-            console.log('\'' + answer + '\'' + ' is wrong answer ;(. Correct answer was '
-                        + '\'' + correctAnswer + '\'.\n Let\'s try again, ' + name + '!');
-            break;
-        }       
-    }
-    if (i == 3) {
-        console.log('Congratulations, ' + name + '!');
-    }
 };
 
 const findCorrectAnswerOfGame = (nameGame, digit) => {
@@ -69,6 +47,28 @@ const findCorrectAnswerOfGame = (nameGame, digit) => {
 return arrConditions;
 };
 
+export const game = (nameGame, name, digit = 1, rounds = 3) => {
+    let i = 0;
+    while (i < rounds) {
+        const arrConditions = findCorrectAnswerOfGame(nameGame, digit);
+        const question = arrConditions[0];
+        const correctAnswer = arrConditions[1];
+        console.log('Question: ' + question);
+        const answer = readlineSync.question('Your answer: ');
+        if (answer.trim().toLowerCase() == correctAnswer) {
+            i += 1;
+            console.log('Correct!');
+        } else {
+            console.log('\'' + answer + '\'' + ' is wrong answer ;(. Correct answer was '
+                        + '\'' + correctAnswer + '\'.\n Let\'s try again, ' + name + '!');
+            break;
+        }       
+    }
+    if (i == 3) {
+        console.log('Congratulations, ' + name + '!');
+    }
+};
+
 const calc = (arrConditions, digit) => {
 
     const arrOper = [' + ', ' - ', ' * ']
@@ -88,7 +88,7 @@ const calc = (arrConditions, digit) => {
             correctAnswer = number1 * numser2;
             break;
     }
-    arrConditions.push('' + number1 + arrOper[simbol] + numser2);
+    arrConditions.push(number1 + arrOper[simbol] + numser2);
     arrConditions.push(correctAnswer);
 };
 
@@ -126,7 +126,7 @@ const prime = (arrConditions, digit) => {
     let j = 2;
     const limit = Math.sqrt(number);
     while (j <= limit) {
-        if (number % j === 0) {
+        if (number % j == 0) {
             correctAnswer = 'no';
             break;
         }
