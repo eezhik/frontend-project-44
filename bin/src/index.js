@@ -71,10 +71,10 @@ export const game = (nameGame, name, digit = 1, rounds = 3) => {
 
 const calc = (arrConditions, digit) => {
 
-    const arrOper = [' + ', ' - ', ' * ']
-    const number1 = Math.floor(Math.random()*digit);
-    const numser2 = Math.floor(Math.random()*digit);
-    const simbol = Math.floor(Math.random()*arrOper.length);
+    const arrOper = [' + ', ' - ', ' * '];
+    const number1 = Math.floor(Math.random() * digit);
+    const numser2 = Math.floor(Math.random() * digit);
+    const simbol = Math.floor(Math.random() * arrOper.length);
     let correctAnswer = 0;
 
     switch (simbol) {
