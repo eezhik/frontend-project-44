@@ -163,6 +163,6 @@ const progression = (arrConditions, digit) => {
         }
         termOfProgression += step;
     }
-    arrConditions.push(arrProgression.join(', '));
+    arrConditions.push(arrProgression.join(' '));
     arrConditions.push(correctAnswer);   
 };
