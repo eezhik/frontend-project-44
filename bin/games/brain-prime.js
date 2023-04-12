@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import * as common from '../src/index.js';
 
 const name = common.greeting();

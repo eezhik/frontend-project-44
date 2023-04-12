@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 
 export const greeting = () => {
     console.log('Welcome to the Brain Games!');
-    const name = readlineSync.question('May I have your name? '); 
-    console.log('Hello, '+ name + '!');
+    const name = readlineSync.question('May I have your name? ');
+    console.log('Hello, ' + name + '!');
     return name;
 };
 
@@ -14,56 +13,50 @@ export const level = () => {
     // и записи аксинем я убрала этот функционал и возвращаю просто 2, как в примерах задачи
     // поэтому в целях обмануть линтер я поставила это условие.
     const digit = 2;
-    if (digit === 2){
+    if (digit === 2) {
         return digit;
     } 
-
     const level = readlineSync.question('Please, enter the difficulty of the game from 1 to 3? ');
     const arrLeveles = ['1','2','3'];
     if (arrLeveles.indexOf(level) < 0) {
         console.log('Sorry, we don t know this level of difficulty. You\'ll play in easy level!')        
     }
-
     return level;
 };
 
 export const game = (nameGame, name, digit = 1, rounds = 3) => {
-    let i = 0; 
-    
-    while (i < rounds){
+    let i = 0;
+    while (i < rounds) {
         const arrConditions = findCorrectAnswerOfGame(nameGame, digit);
-
         const question = arrConditions[0];
         const correctAnswer = arrConditions[1];
-        console.log('Question: ' + question);     
-    
+        console.log('Question: ' + question);
         const answer = readlineSync.question('Your answer: ');
-    
         if (answer.trim().toLowerCase() == correctAnswer) {
             i += 1;
             console.log('Correct!');
         } else {
-            console.log('\'' + answer + '\'' + ' is wrong answer ;(. Correct answer was ' 
+            console.log('\'' + answer + '\'' + ' is wrong answer ;(. Correct answer was '
                         + '\'' + correctAnswer + '\'.\n Let\'s try again, ' + name + '!');
-            break;                 
+            break;
         }       
     }
     if (i == 3) {
-        console.log('Congratulations, ' + name + '!');    
+        console.log('Congratulations, ' + name + '!');
     }
 };
 
 const findCorrectAnswerOfGame = (nameGame, digit) => {
     
-    let arrConditions = []; 
+    let arrConditions = [];
     switch (nameGame) {
         case 'even':
             even(arrConditions, digit);
             break;
-        case 'calc': 
+        case 'calc':
             calc(arrConditions, digit);
-            break; 
-        case 'gcd': 
+            break;
+        case 'gcd':
             gcd(arrConditions, digit);
             break;
         case 'prime':
@@ -71,7 +64,7 @@ const findCorrectAnswerOfGame = (nameGame, digit) => {
             break;
         case 'progression':
             progression(arrConditions, digit); 
-            break;      
+            break;
     }
 return arrConditions;
 };
@@ -88,10 +81,10 @@ const calc = (arrConditions, digit) => {
         case 0:
             correctAnswer = number1 + numser2;
             break;
-        case 1: 
+        case 1:
             correctAnswer = number1 - numser2;
-            break; 
-        case 2: 
+            break;
+        case 2:
             correctAnswer = number1 * numser2;
             break;
     }
@@ -102,13 +95,13 @@ const calc = (arrConditions, digit) => {
 const even = (arrConditions, digit) => {
     const number = Math.floor(Math.random() * digit);
 
-    const even = number % 2 == 0; 
+    const even = number % 2 == 0;
     let correctAnswer = '';
     if (even) {
         correctAnswer = 'yes';
     } else {
-        correctAnswer = 'no'; 
-    } 
+        correctAnswer = 'no';
+    }
     arrConditions.push(number);
     arrConditions.push(correctAnswer);
 };
@@ -123,7 +116,7 @@ const gcd = (arrConditions, digit) => {
     number1 = help;
     }
     const correctAnswer = number1;
-    arrConditions.push(correctAnswer); 
+    arrConditions.push(correctAnswer);
 };
 
 const prime = (arrConditions, digit) => {
@@ -140,14 +133,14 @@ const prime = (arrConditions, digit) => {
         j +=1;
     }
 
-    arrConditions.push(number);     
+    arrConditions.push(number);
     arrConditions.push(correctAnswer);
 };
 
 const progression = (arrConditions, digit) => {
-    const minCount = 5; 
+    const minCount = 5;
     const notZero = 1;
-    const maxCount = 10; 
+    const maxCount = 10;
     const count = minCount + Math.floor(Math.random() * maxCount);
     const step = notZero + Math.floor(Math.random() * digit);
     const hidden = notZero + Math.floor(Math.random()* count);
@@ -156,13 +149,13 @@ const progression = (arrConditions, digit) => {
     let correctAnswer = termOfProgression;
     for (let i = 1; i <= count + 1; i += 1) {
         if (i == hidden) {
-            correctAnswer = termOfProgression; 
-            arrProgression.push('..');  
-        } else { 
+            correctAnswer = termOfProgression;
+            arrProgression.push('..');
+        } else {
             arrProgression.push(termOfProgression);
         }
         termOfProgression += step;
     }
     arrConditions.push(arrProgression.join(' '));
-    arrConditions.push(correctAnswer);   
+    arrConditions.push(correctAnswer);
 };
