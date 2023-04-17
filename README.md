@@ -1,7 +1,11 @@
 <h1> Игры разума</h1>
+node.js v12.22.9
 1. "Проверка на четность". Если число на экране четное, то введите "yes", если нечетное, то введите 'no'.
 brain-even
-https://asciinema.org/a/ZQBwwIW0I6EHHqtI225Y1qTkM
+<embed type="video/webm"
+       src="https://asciinema.org/a/ZQBwwIW0I6EHHqtI225Y1qTkM"
+       width="250"
+       height="200">
 2. "Калькулятор". Вычислите значение выражения и запишите ответ.
 brain-calc
 https://asciinema.org/a/fXtmnr1OpaebApVAzX57Jsybw
