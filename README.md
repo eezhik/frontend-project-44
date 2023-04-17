@@ -1,4 +1,4 @@
-Project "Brain games" содержит 5 игр:
+<h1> Игры разума</h1>
 1. "Проверка на четность". Если число на экране четное, то введите "yes", если нечетное, то введите 'no'.
 brain-even
 https://asciinema.org/a/ZQBwwIW0I6EHHqtI225Y1qTkM
@@ -19,5 +19,5 @@ https://asciinema.org/a/PeR29rbcxzWv7m1jlzvTWxDMZ
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/eezhik/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/eezhik/frontend-project-44/actions)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/eaba502a13ff59bedfdf/maintainability)](https://codeclimate.com/github/eezhik/frontend-project-44/maintainability)npm ino
+[![Maintainability](https://api.codeclimate.com/v1/badges/eaba502a13ff59bedfdf/maintainability)](https://codeclimate.com/github/eezhik/frontend-project-44/maintainability)
 
