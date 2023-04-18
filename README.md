@@ -1,11 +1,12 @@
 <h1> Игры разума</h1>
 node.js v12.22.9
 <h2>Чтобы установить игры, выполните команды:</h2>
-<p>- git clone git@github.com:KvDmtr/frontend-project-44.git </p>
-<p>- cd frontend-project-44</p>
-<li>- make install</li>
-<li>- npm link</li>
-<ul>
+<dl>
+<dt>- git clone git@github.com:KvDmtr/frontend-project-44.git </dt>
+<dt>- cd frontend-project-44</dt>
+<dt>- make install</dt>
+<dt>- npm link</dt>
+<dl>
 <h2>Описание игр </h2>
 <ol>
 <li> "Проверка на четность". Если число на экране четное, то введите "yes", если нечетное, то введите 'no'.
