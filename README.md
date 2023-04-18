@@ -1,11 +1,13 @@
 <h1> Игры разума</h1>
 node.js v12.22.9
 <h2>Чтобы установить игры, выполните команды:</h2>
-- git clone git@github.com:KvDmtr/frontend-project-44.git
-- cd frontend-project-44
-- make install
-- npm link
 
+<li>- git clone git@github.com:KvDmtr/frontend-project-44.git </li>
+<li>- cd frontend-project-44<li>
+<li>- make install<li>
+<li>- npm link</li>
+<ul>
+<h2>Описание игр </h2>
 <ol>
 <li> "Проверка на четность". Если число на экране четное, то введите "yes", если нечетное, то введите 'no'.
 Команда запуска: brain-even
