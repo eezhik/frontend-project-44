@@ -1,7 +1,7 @@
 <h1> Игры разума</h1>
 node.js v12.22.9
 <dl>
-<dt>Чтобы установить игры, выполните команды:</dt>
+<dt><h2>Чтобы установить игры, выполните команды:</h2></dt>
 <dd>- git clone git@github.com:eezhik/frontend-project-44.git </dd>
 <dd>- cd frontend-project-44</dd>
 <dd>- make install</dd>
