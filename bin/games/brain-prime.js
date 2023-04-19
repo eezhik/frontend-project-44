@@ -20,4 +20,4 @@ const prime = (arrConditions, digit) => {
 const name = common.greeting();
 const digit = 10 ** common.level();
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-common.game(prime, name, digit);
+common.gameProcess(prime, name, digit);

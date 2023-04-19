@@ -23,11 +23,11 @@ export const level = () => {
     return level;
 };
 
-export const game = (nameGame, name, digit = 1, rounds = 3) => {
+export const gameProcess = (getGame, name, digit = 1, rounds = 3) => {
     let i = 0;
     while (i < rounds) {
         const arrConditions = [];
-        nameGame(arrConditions, digit);
+        getGame(arrConditions, digit);
         const question = arrConditions[0];
         const correctAnswer = arrConditions[1];
         console.log(`Question: ${question}`);

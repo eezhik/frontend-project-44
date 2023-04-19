@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { setDefaultOptions } from 'readline-sync';
 import * as common from '../src/index.js';
 
 const calc = (arrConditions, digit) => {
@@ -17,6 +18,8 @@ const calc = (arrConditions, digit) => {
         case 2:
             correctAnswer = number1 * numser2;
             break;
+        default:
+            correctAnswer = number1 + namber2;           
     }
     arrConditions.push(number1 + arrOper[simbol] + numser2);
     arrConditions.push(correctAnswer);
@@ -25,4 +28,4 @@ const calc = (arrConditions, digit) => {
 const name = common.greeting();
 const digit = 10 ** common.level();
 console.log('What is the result of the expression?');
-common.game(calc, name, digit);
+common.gameProcess(calc, name, digit);

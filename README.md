@@ -27,14 +27,14 @@ node.js v12.22.9
 Команда запуска: brain-calc
 <a href="https://asciinema.org/a/fXtmnr1OpaebApVAzX57Jsybw" target="_blank"><img src="https://asciinema.org/a/fXtmnr1OpaebApVAzX57Jsybw.svg" /></a></li>
 <li>"НОД" - наибольший общий делитель. Определите наибольший общий делитель двух чисел и запишите ответ.
-Команда запуска: brain-gcd 
-https://asciinema.org/a/z8jO2MykCloVoBGMJYD9g4R77 </li>
+<b>Команда запуска:</b> brain-gcd 
+<a href="https://asciinema.org/a/z8jO2MykCloVoBGMJYD9g4R77" target="_blank"><img src="https://asciinema.org/a/z8jO2MykCloVoBGMJYD9g4R77.svg" /></a></li>
 <li>"Арифметическая прогрессия" - нужно определить пропущенный член прогрессии и запишите ответ.
 Команда запуска: brain-progression 
-https://asciinema.org/a/kkMoc3WmfSqehQ78d2vfhtoR8 </li>
+<script async id="asciicast-kkMoc3WmfSqehQ78d2vfhtoR8" src="https://asciinema.org/a/kkMoc3WmfSqehQ78d2vfhtoR8.js"></script></li>
 <li>"Простое ли число?" - если число на экране простое, то введите "yes", а если нет то введите 'no'.
 Команда запуска: brain-prime
-https://asciinema.org/a/PeR29rbcxzWv7m1jlzvTWxDMZ </li>
+<script async id="asciicast-PeR29rbcxzWv7m1jlzvTWxDMZ" src="https://asciinema.org/a/PeR29rbcxzWv7m1jlzvTWxDMZ.js"></script> </li>
 </ol>
 
 ### Hexlet tests and linter status:
