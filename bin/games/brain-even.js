@@ -3,7 +3,6 @@ import * as common from '../src/index.js';
 
 const even = (arrConditions, digit) => {
     const number = Math.floor(Math.random() * digit);
-
     const even = number % 2 == 0;
     let correctAnswer = '';
     if (even) {

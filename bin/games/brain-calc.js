@@ -2,13 +2,11 @@
 import * as common from '../src/index.js';
 
 const calc = (arrConditions, digit) => {
-
     const arrOper = [' + ', ' - ', ' * '];
     const number1 = Math.floor(Math.random() * digit);
     const numser2 = Math.floor(Math.random() * digit);
     const simbol = Math.floor(Math.random() * arrOper.length);
     let correctAnswer = 0;
-
     switch (simbol) {
         case 0:
             correctAnswer = number1 + numser2;
