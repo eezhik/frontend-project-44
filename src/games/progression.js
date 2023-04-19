@@ -1,7 +1,6 @@
-#!/usr/bin/env node
-import * as common from '../src/index.js';
+import * as common from '../index.js';
 
-const progression = (arrConditions, digit) => {
+const conditions = (arrConditions, digit) => {
     const minCount = 5;
     const notZero = 1;
     const maxCount = 10;
@@ -21,10 +20,12 @@ const progression = (arrConditions, digit) => {
         termOfProgression += step;
     }
     arrConditions.push(arrProgression.join(' '));
-    arrConditions.push(correctAnswer);
+    arrConditions.push(`${correctAnswer}`);
 };
 
-const name = common.greeting();
-const digit = 10 ** common.level();
-console.log('What number is missing in the progression?');
-common.gameProcess(progression, name, digit);
+export const playProgression = () => {
+  const name = common.greeting();
+  const digit = 10 ** common.getLevel();
+  console.log('What number is missing in the progression?');
+  common.gameProcess(conditions, name, digit);
+};
