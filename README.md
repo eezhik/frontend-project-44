@@ -25,7 +25,7 @@ node.js v12.22.9
        height="200">
 <li>"Калькулятор". Вычислите значение выражения и запишите ответ.
 Команда запуска: brain-calc
-https://asciinema.org/a/fXtmnr1OpaebApVAzX57Jsybw </li>
+<a href="https://asciinema.org/a/fXtmnr1OpaebApVAzX57Jsybw" target="_blank"><img src="https://asciinema.org/a/fXtmnr1OpaebApVAzX57Jsybw.svg" /></a></li>
 <li>"НОД" - наибольший общий делитель. Определите наибольший общий делитель двух чисел и запишите ответ.
 Команда запуска: brain-gcd 
 https://asciinema.org/a/z8jO2MykCloVoBGMJYD9g4R77 </li>
