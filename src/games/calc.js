@@ -1,25 +1,25 @@
 import * as common from '../index.js';
 
 const conditions = (arrConditions, digit) => {
-  const arrOper = ['+', '-', '*'];
+  const arrMathOperations = ['+', '-', '*'];
   const number1 = Math.floor(Math.random() * digit);
   const number2 = Math.floor(Math.random() * digit);
-  const simbol = Math.floor(Math.random() * arrOper.length);
+  const simbol = Math.floor(Math.random() * arrMathOperations.length);
   let correctAnswer = 0;
   switch (simbol) {
-      case 0:
-          correctAnswer = number1 + number2;
-          break;
-      case 1:
-          correctAnswer = number1 - number2;
-          break;
-      case 2:
-          correctAnswer = number1 * number2;
-          break;
-      default:
-          correctAnswer = number1 + number2;
+    case 0:
+        correctAnswer = number1 + number2;
+        break;
+    case 1:
+        correctAnswer = number1 - number2;
+        break;
+    case 2:
+        correctAnswer = number1 * number2;
+        break;
+    default:
+        correctAnswer = number1 + number2;
   }
-  arrConditions.push(`${number1} ${arrOper[simbol]} ${number2}`);
+  arrConditions.push(`${number1} ${arrMathOperations[simbol]} ${number2}`);
   arrConditions.push(`${correctAnswer}`);
 };
 

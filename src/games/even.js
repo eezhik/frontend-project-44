@@ -5,9 +5,9 @@ const conditions = (arrConditions, digit) => {
   const isEven = number % 2 === 0;
   let correctAnswer = '';
   if (isEven) {
-      correctAnswer = 'yes';
+    correctAnswer = 'yes';
   } else {
-      correctAnswer = 'no';
+    correctAnswer = 'no';
   }
   arrConditions.push(number);
   arrConditions.push(correctAnswer);
