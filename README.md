@@ -21,7 +21,7 @@ node.js v12.22.9
 <b>Команда запуска:</b> brain-even
 <a href="https://asciinema.org/a/ZQBwwIW0I6EHHqtI225Y1qTkM" target="_blank"><img src="https://asciinema.org/a/ZQBwwIW0I6EHHqtI225Y1qTkM.svg" /></a>
 <li>"Калькулятор". Вычислите значение выражения и запишите ответ.<br>
-<b>Команда запуска:<b> brain-calc
+<b>Команда запуска:</b> brain-calc
 <a href="https://asciinema.org/a/fXtmnr1OpaebApVAzX57Jsybw" target="_blank"><img src="https://asciinema.org/a/fXtmnr1OpaebApVAzX57Jsybw.svg" /></a></li>
 <li>"НОД" - наибольший общий делитель. Определите наибольший общий делитель двух чисел и запишите ответ.<br>
 <b>Команда запуска:</b> brain-gcd<> 
