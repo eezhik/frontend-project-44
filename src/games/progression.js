@@ -23,9 +23,11 @@ const conditions = (arrConditions, digit) => {
     arrConditions.push(`${correctAnswer}`);
 };
 
-export const playProgression = () => {
+const playProgression = () => {
   const name = common.greeting();
   const digit = 10 ** common.getLevel();
   console.log('What number is missing in the progression?');
   common.gameProcess(conditions, name, digit);
 };
+
+export default playProgression;
