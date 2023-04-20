@@ -40,4 +40,3 @@ node.js v12.22.9
 [![Actions Status](https://github.com/eezhik/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/eezhik/frontend-project-44/actions)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/eaba502a13ff59bedfdf/maintainability)](https://codeclimate.com/github/eezhik/frontend-project-44/maintainability)
-
