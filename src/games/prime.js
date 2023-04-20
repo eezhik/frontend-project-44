@@ -6,10 +6,10 @@ const conditions = (arrConditions, digit) => {
   let j = 2;
   const limit = Math.sqrt(number);
   while (j <= limit) {
-      if (number % j === 0) {
-        correctAnswer = 'no';
-        break;
-      }
+    if (number % j === 0) {
+      correctAnswer = 'no';
+      break;
+    }
     j += 1;
   }
   arrConditions.push(number);
