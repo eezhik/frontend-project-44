@@ -8,16 +8,16 @@ const conditions = (arrConditions, digit) => {
   let correctAnswer = 0;
   switch (simbol) {
     case 0:
-        correctAnswer = number1 + number2;
-        break;
+      correctAnswer = number1 + number2;
+      break;
     case 1:
-        correctAnswer = number1 - number2;
-        break;
+      correctAnswer = number1 - number2;
+      break;
     case 2:
-        correctAnswer = number1 * number2;
-        break;
+      correctAnswer = number1 * number2;
+      break;
     default:
-        correctAnswer = number1 + number2;
+      correctAnswer = number1 + number2;
   }
   arrConditions.push(`${number1} ${arrMathOperations[simbol]} ${number2}`);
   arrConditions.push(`${correctAnswer}`);
