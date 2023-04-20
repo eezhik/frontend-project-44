@@ -5,4 +5,4 @@ const getName = () => {
   console.log(`Hello, ${name}!`);
 };
 
-export default askYourName;
+export default getName;
