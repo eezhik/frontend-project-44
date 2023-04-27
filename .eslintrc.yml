@@ -3,27 +3,13 @@ plugins:
   - fp
 
 env:
-  node: true
-  jest: true
-  es2020: true
-
+  browser: true
+  es2021: true
 extends:
   - airbnb-base
-  - "plugin:jest/recommended"
-  - "plugin:fp/recommended"
-
 parserOptions:
-  ecmaVersion: 2020
-
+  ecmaVersion: latest
+  sourceType: module
 rules:
   no-console: 0
-  import/extensions: 0 # TODO: remove when rule will be adjusted for new nodejs version (issue link?)
-  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
-  fp/no-nil: 0
-  fp/no-unused-expression: 0
-  fp/no-throw: 0
-  fp/no-mutating-methods:
-    - error
-    - allowedObjects:
-      - "_"
-  linebreak-style: 0  
+  import/extensions: off

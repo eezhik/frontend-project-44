@@ -1,5 +1,5 @@
 
-install: install-deps
+install: 
 	npx simple-git-hooks
 
 install-deps:
@@ -25,3 +25,6 @@ brain-progression:
 
 brain-prime:
 	node bin/brain-prime.js
+
+ brain-games:
+ 	bin/brain-games.js	

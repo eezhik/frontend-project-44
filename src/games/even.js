@@ -15,7 +15,7 @@ const conditions = (arrConditions, digit) => {
 
 const playEven = () => {
   const name = common.greeting();
-  const digit = 10 ** common.getLevel();
+  const digit = 10 ** 2;
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   common.gameProcess(conditions, name, digit);
 };

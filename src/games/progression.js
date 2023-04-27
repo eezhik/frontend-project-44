@@ -25,7 +25,7 @@ const conditions = (arrConditions, digit) => {
 
 const playProgression = () => {
   const name = common.greeting();
-  const digit = 10 ** common.getLevel();
+  const digit = 10;
   console.log('What number is missing in the progression?');
   common.gameProcess(conditions, name, digit);
 };

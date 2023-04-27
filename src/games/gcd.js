@@ -15,7 +15,7 @@ const conditions = (arrConditions, digit) => {
 
 const playGcd = () => {
   const name = common.greeting();
-  const digit = 10 ** common.getLevel();
+  const digit = 10;
   console.log('Find the greatest common divisor of given numbers.');
   common.gameProcess(conditions, name, digit);
 };

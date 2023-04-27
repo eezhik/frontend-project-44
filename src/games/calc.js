@@ -25,7 +25,7 @@ const conditions = (arrConditions, digit) => {
 
 const playCalc = () => {
   const name = common.greeting();
-  const digit = 10 ** common.getLevel();
+  const digit = 10 ** 2;
   console.log('What is the result of the expression?');
   common.gameProcess(conditions, name, digit);
 };
