@@ -1,33 +1,34 @@
 import * as common from '../index.js';
+import randomNumber from '../utils.js';
 
-const conditions = (arrConditions, digit) => {
-  const arrMathOperations = ['+', '-', '*'];
-  const number1 = Math.floor(Math.random() * digit);
-  const number2 = Math.floor(Math.random() * digit);
-  const simbol = Math.floor(Math.random() * arrMathOperations.length);
-  let correctAnswer = 0;
+const getCorrectAnswer = (number1, number2, simbol) => {
   switch (simbol) {
     case 0:
-      correctAnswer = number1 + number2;
-      break;
+      return number1 + number2;
     case 1:
-      correctAnswer = number1 - number2;
-      break;
+      return number1 - number2;
     case 2:
-      correctAnswer = number1 * number2;
-      break;
+      return number1 * number2;
     default:
-      correctAnswer = number1 + number2;
+      throw new Error('Error! Do not find operator!');
   }
+};
+
+const conditions = () => {
+  const arrConditions = [];
+  const arrMathOperations = ['+', '-', '*'];
+  const number1 = randomNumber();
+  const number2 = randomNumber();
+  const simbol = randomNumber(0, arrMathOperations.length);
   arrConditions.push(`${number1} ${arrMathOperations[simbol]} ${number2}`);
-  arrConditions.push(`${correctAnswer}`);
+  arrConditions.push(`${getCorrectAnswer(number1, number2, simbol)}`);
+  return arrConditions;
 };
 
 const playCalc = () => {
   const name = common.greeting();
-  const digit = 10 ** 2;
   console.log('What is the result of the expression?');
-  common.gameProcess(conditions, name, digit);
+  common.gameProcess(conditions, name);
 };
 
 export default playCalc;

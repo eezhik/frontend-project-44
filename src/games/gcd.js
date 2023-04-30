@@ -1,23 +1,24 @@
 import * as common from '../index.js';
+import randomNumber from '../utils.js';
 
-const conditions = (arrConditions, digit) => {
-  let number1 = Math.floor(Math.random() * digit);
-  let number2 = Math.floor(Math.random() * digit);
+const conditions = () => {
+  const arrConditions = [];
+  let number1 = randomNumber();
+  let number2 = randomNumber();
   arrConditions.push(`${number1} ${number2}`);
   while (number2) {
     const help = number2;
     number2 = number1 % number2;
     number1 = help;
   }
-  const correctAnswer = number1;
-  arrConditions.push(`${correctAnswer}`);
+  arrConditions.push(`${number1}`);
+  return arrConditions;
 };
 
 const playGcd = () => {
   const name = common.greeting();
-  const digit = 10;
   console.log('Find the greatest common divisor of given numbers.');
-  common.gameProcess(conditions, name, digit);
+  common.gameProcess(conditions, name);
 };
 
 export default playGcd;

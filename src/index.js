@@ -7,13 +7,13 @@ export const greeting = () => {
   return name;
 };
 
-export const gameProcess = (getGame, name, digit = 1, rounds = 3) => {
+export const gameProcess = (conditions, name) => {
+  const rounds = 3;
   let i = 0;
   while (i < rounds) {
-    const arrConditions = [];
-    getGame(arrConditions, digit);
-    const question = arrConditions[0];
-    const correctAnswer = arrConditions[1];
+    const conditionsOfGame = conditions();
+    const question = conditionsOfGame[0];
+    const correctAnswer = conditionsOfGame[1];
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer.trim().toLowerCase() === correctAnswer) {

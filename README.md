@@ -1,3 +1,8 @@
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/eezhik/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/eezhik/frontend-project-44/actions)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/eaba502a13ff59bedfdf/maintainability)](https://codeclimate.com/github/eezhik/frontend-project-44/maintainability)
+
 <h1> Игры разума</h1>
 node.js v12.22.9
 
@@ -35,8 +40,3 @@ node.js v12.22.9
 <b>Команда запуска:</b> brain-prime
 <a href="https://asciinema.org/a/PeR29rbcxzWv7m1jlzvTWxDMZ" target="_blank"><img src="https://asciinema.org/a/PeR29rbcxzWv7m1jlzvTWxDMZ.svg" /></a></li>
 </ol>
-
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/eezhik/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/eezhik/frontend-project-44/actions)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/eaba502a13ff59bedfdf/maintainability)](https://codeclimate.com/github/eezhik/frontend-project-44/maintainability)

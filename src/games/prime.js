@@ -1,26 +1,30 @@
 import * as common from '../index.js';
+import randomNumber from '../utils.js';
 
-const conditions = (arrConditions, digit) => {
-  const number = 2 + Math.floor(Math.random() * digit);
-  let correctAnswer = 'yes';
+const getCorrectAnswer = (number) => {
   let j = 2;
   const limit = Math.sqrt(number);
   while (j <= limit) {
     if (number % j === 0) {
-      correctAnswer = 'no';
-      break;
+      return 'no';
     }
     j += 1;
   }
+  return 'yes';
+};
+
+const conditions = () => {
+  const arrConditions = [];
+  const number = randomNumber(2);
   arrConditions.push(number);
-  arrConditions.push(correctAnswer);
+  arrConditions.push(getCorrectAnswer(number));
+  return arrConditions;
 };
 
 const playPrime = () => {
   const name = common.greeting();
-  const digit = 10 ** 2;
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  common.gameProcess(conditions, name, digit);
+  common.gameProcess(conditions, name);
 };
 
 export default playPrime;
