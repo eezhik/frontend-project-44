@@ -19,7 +19,7 @@ const getConditions = () => {
   const mathOperations = ['+', '-', '*'];
   const number1 = randomNumber();
   const number2 = randomNumber();
-  const operatorIndex= randomNumber(0, mathOperations.length);
+  const operatorIndex = randomNumber(0, mathOperations.length);
   conditions.push(`${number1} ${mathOperations[operatorIndex]} ${number2}`);
   conditions.push(`${evaluateExpression(number1, number2, mathOperations[operatorIndex])}`);
   return conditions;

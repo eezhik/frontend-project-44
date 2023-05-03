@@ -3,7 +3,7 @@ import randomNumber from '../utils.js';
 
 const isEven = (number) => (number % 2 === 0);
 
-const getCorrectAnswer = (number) => (isEven(number) ? 'yes' : 'no') 
+const getCorrectAnswer = (number) => (isEven(number) ? 'yes' : 'no');
 
 const getConditions = () => {
   const conditions = [];
