@@ -1,34 +1,34 @@
 import * as common from '../index.js';
 import randomNumber from '../utils.js';
 
-const getCorrectAnswer = (number1, number2, simbol) => {
-  switch (simbol) {
-    case 0:
+const evaluateExpression = (number1, number2, mathOperator) => {
+  switch (mathOperator) {
+    case '+':
       return number1 + number2;
-    case 1:
+    case '-':
       return number1 - number2;
-    case 2:
+    case '*':
       return number1 * number2;
     default:
-      throw new Error('Error! Do not find operator!');
+      throw new Error(`Error! Did not find operator '${mathOperator}!`);
   }
 };
 
-const conditions = () => {
-  const arrConditions = [];
-  const arrMathOperations = ['+', '-', '*'];
+const getConditions = () => {
+  const conditions = [];
+  const mathOperations = ['+', '-', '*'];
   const number1 = randomNumber();
   const number2 = randomNumber();
-  const simbol = randomNumber(0, arrMathOperations.length);
-  arrConditions.push(`${number1} ${arrMathOperations[simbol]} ${number2}`);
-  arrConditions.push(`${getCorrectAnswer(number1, number2, simbol)}`);
-  return arrConditions;
+  const operatorIndex= randomNumber(0, mathOperations.length);
+  conditions.push(`${number1} ${mathOperations[operatorIndex]} ${number2}`);
+  conditions.push(`${evaluateExpression(number1, number2, mathOperations[operatorIndex])}`);
+  return conditions;
 };
 
 const playCalc = () => {
   const name = common.greeting();
   console.log('What is the result of the expression?');
-  common.gameProcess(conditions, name);
+  common.runGame(getConditions, name);
 };
 
 export default playCalc;
