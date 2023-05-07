@@ -8,12 +8,6 @@ node.js v12.22.9
 
 <h2>Чтобы установить игры, выполните команды:</h2>
 
-- git clone git@github.com:eezhik/frontend-project-44.git <br>
-- cd frontend-project-44<br>
-- make install<br>
-- npm link<br>
-
-
 <dl>
 <dd>- git clone git@github.com:eezhik/frontend-project-44.git </dd>
 <dd>- cd frontend-project-44</dd>

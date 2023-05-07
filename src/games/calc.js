@@ -1,5 +1,5 @@
-import * as common from '../index.js';
-import randomNumber from '../utils.js';
+import runGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const evaluateExpression = (number1, number2, mathOperator) => {
   switch (mathOperator) {
@@ -10,25 +10,24 @@ const evaluateExpression = (number1, number2, mathOperator) => {
     case '*':
       return number1 * number2;
     default:
-      throw new Error(`Error! Did not find operator '${mathOperator}!`);
+      throw new Error(`Unknown operator '${mathOperator}!`);
   }
 };
 
-const getConditions = () => {
-  const conditions = [];
+const getTaskAndAnswer = () => {
+  const taskAndAnswer = [];
   const mathOperations = ['+', '-', '*'];
-  const number1 = randomNumber();
-  const number2 = randomNumber();
-  const operatorIndex = randomNumber(0, mathOperations.length);
-  conditions.push(`${number1} ${mathOperations[operatorIndex]} ${number2}`);
-  conditions.push(`${evaluateExpression(number1, number2, mathOperations[operatorIndex])}`);
-  return conditions;
+  const number1 = getRandomNumber();
+  const number2 = getRandomNumber();
+  const operatorIndex = getRandomNumber(0, mathOperations.length);
+  taskAndAnswer.push(`${number1} ${mathOperations[operatorIndex]} ${number2}`);
+  taskAndAnswer.push(`${evaluateExpression(number1, number2, mathOperations[operatorIndex])}`);
+  return taskAndAnswer;
 };
 
 const playCalc = () => {
-  const name = common.greeting();
-  console.log('What is the result of the expression?');
-  common.runGame(getConditions, name);
+  const rule = 'What is the result of the expression?';
+  runGame(getTaskAndAnswer, rule);
 };
 
 export default playCalc;

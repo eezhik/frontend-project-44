@@ -1,7 +1,10 @@
-import * as common from '../index.js';
-import randomNumber from '../utils.js';
+import runGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
   const limit = Math.sqrt(number);
   for (let i = 2; i <= limit; i += 1) {
     if (number % i === 0) {
@@ -13,18 +16,17 @@ const isPrime = (number) => {
 
 const getCorrectAnswer = (number) => (isPrime(number) ? 'yes' : 'no');
 
-const getConditions = () => {
-  const conditions = [];
-  const number = randomNumber(2);
-  conditions.push(number);
-  conditions.push(getCorrectAnswer(number));
-  return conditions;
+const getTaskAndAnswer = () => {
+  const taskAndAnswer = [];
+  const number = getRandomNumber(2);
+  taskAndAnswer.push(number);
+  taskAndAnswer.push(getCorrectAnswer(number));
+  return taskAndAnswer;
 };
 
 const playPrime = () => {
-  const name = common.greeting();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  common.runGame(getConditions, name);
+  const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  runGame(getTaskAndAnswer, rule);
 };
 
 export default playPrime;

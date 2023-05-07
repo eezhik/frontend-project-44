@@ -1,22 +1,21 @@
-import * as common from '../index.js';
-import randomNumber from '../utils.js';
+import runGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isEven = (number) => (number % 2 === 0);
 
 const getCorrectAnswer = (number) => (isEven(number) ? 'yes' : 'no');
 
-const getConditions = () => {
-  const conditions = [];
-  const number = randomNumber();
-  conditions.push(number);
-  conditions.push(getCorrectAnswer(number));
-  return conditions;
+const getTaskAndAnswer = () => {
+  const taskAndAnswer = [];
+  const number = getRandomNumber();
+  taskAndAnswer.push(number);
+  taskAndAnswer.push(getCorrectAnswer(number));
+  return taskAndAnswer;
 };
 
 const playEven = () => {
-  const name = common.greeting();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  common.runGame(getConditions, name);
+  const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+  runGame(getTaskAndAnswer, rule);
 };
 
 export default playEven;

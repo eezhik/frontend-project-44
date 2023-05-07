@@ -1,30 +1,25 @@
-import * as common from '../index.js';
-import randomNumber from '../utils.js';
+import runGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getGCD = (number1, number2) => {
-  let gcd = number1;
-  let divisor = number2;
-  while (divisor) {
-    const help = divisor;
-    divisor = gcd % divisor;
-    gcd = help;
+  if (number2 === 0) {
+    return number1;
   }
-  return gcd;
+  return getGCD(number2, number1 % number2);
 };
 
-const getConditions = () => {
-  const conditions = [];
-  const number1 = randomNumber();
-  const number2 = randomNumber();
-  conditions.push(`${number1} ${number2}`);
-  conditions.push(`${getGCD(number1, number2)}`);
-  return conditions;
+const getTaskAndAnswer = () => {
+  const taskAndAnswer = [];
+  const number1 = getRandomNumber();
+  const number2 = getRandomNumber();
+  taskAndAnswer.push(`${number1} ${number2}`);
+  taskAndAnswer.push(`${getGCD(number1, number2)}`);
+  return taskAndAnswer;
 };
 
 const playGcd = () => {
-  const name = common.greeting();
-  console.log('Find the greatest common divisor of given numbers.');
-  common.runGame(getConditions, name);
+  const rule = 'Find the greatest common divisor of given numbers.';
+  runGame(getTaskAndAnswer, rule);
 };
 
 export default playGcd;

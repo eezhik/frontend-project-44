@@ -1,37 +1,34 @@
-import * as common from '../index.js';
-import randomNumber from '../utils.js';
+import runGame from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const getArithmeticProgression = (firstTerm, step, count) => {
   const progression = [];
-  let newTerm = firstTerm;
-  for (let i = 0; i <= count; i += 1) {
+  for (let newTerm = firstTerm; progression.length < count; newTerm += step) {
     progression.push(newTerm);
-    newTerm += step;
   }
   return progression;
 };
 
-const getConditions = () => {
-  const conditions = [];
+const getTaskAndAnswer = () => {
+  const taskAndAnswer = [];
   const minCount = 5;
   const notZero = 1;
   const maxCount = 10;
-  const firstTerm = randomNumber();
-  const step = randomNumber(notZero);
-  const count = randomNumber(minCount, maxCount);
+  const firstTerm = getRandomNumber();
+  const step = getRandomNumber(notZero);
+  const count = getRandomNumber(minCount, maxCount);
   const progression = getArithmeticProgression(firstTerm, step, count);
-  const hiddenTermNumber = randomNumber(notZero, count) - 1;
-  const hiddenTerm = progression[hiddenTermNumber];
-  progression[hiddenTermNumber] = '..';
-  conditions.push(progression.join(' '));
-  conditions.push(`${hiddenTerm}`);
-  return conditions;
+  const hiddenIndex = getRandomNumber(notZero, count) - 1;
+  const hiddenValue = progression[hiddenIndex];
+  progression[hiddenIndex] = '..';
+  taskAndAnswer.push(progression.join(' '));
+  taskAndAnswer.push(`${hiddenValue}`);
+  return taskAndAnswer;
 };
 
 const playProgression = () => {
-  const name = common.greeting();
-  console.log('What number is missing in the progression?');
-  common.runGame(getConditions, name);
+  const rule = 'What number is missing in the progression?';
+  runGame(getTaskAndAnswer, rule);
 };
 
 export default playProgression;
