@@ -5,8 +5,8 @@ export default (getTaskAndAnswer, rule) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(rule);
-  const rounds = 3;
-  for (let i = 1; i <= rounds; i += 1) {
+  const maxRound = 3;
+  for (let i = 1; i <= maxRound; i += 1) {
     const taskAndAnswer = getTaskAndAnswer();
     const question = taskAndAnswer[0];
     const correctAnswer = taskAndAnswer[1];
@@ -14,7 +14,7 @@ export default (getTaskAndAnswer, rule) => {
     const answer = readlineSync.question('Your answer: ');
     if (answer.trim().toLowerCase() !== correctAnswer) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
-      break;
+      return;
     }
     console.log('Correct!');
   }
